@@ -17,9 +17,13 @@ const board = []; // array of rows, each row is array of cells  (board[y][x])
 
 function makeBoard() {
   // TODO: set "board" to empty HEIGHT x WIDTH matrix array
-  const table = [[...new Array(WIDTH)], [...new Array(HEIGHT)]];
+  const table = [];
+  for (let i = 0; i < HEIGHT; i++) {
+    table.push(new Array(WIDTH));
+  }
   return table;
 }
+// console.log(makeBoard());
 
 /** makeHtmlBoard: make HTML table and row of column tops. */
 
@@ -28,11 +32,12 @@ function makeHtmlBoard() {
   const htmlBoard = document.querySelector('#board');
 
   // TODO: add comment for this code
-  // ! Create top row, set it's id, add event listener
+  // * Create top row, set it's id, add event listener
   const top = document.createElement('tr');
   top.setAttribute('id', 'column-top');
   top.addEventListener('click', handleClick);
 
+  // * Create WIDHT amt of table cells, append to the top row
   for (let x = 0; x < WIDTH; x++) {
     const headCell = document.createElement('td');
     headCell.setAttribute('id', x);
@@ -41,6 +46,7 @@ function makeHtmlBoard() {
   htmlBoard.append(top);
 
   // TODO: add comment for this code
+  // *
   for (let y = 0; y < HEIGHT; y++) {
     const row = document.createElement('tr');
     for (let x = 0; x < WIDTH; x++) {
