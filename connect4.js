@@ -8,7 +8,7 @@
 const WIDTH = 7;
 const HEIGHT = 6;
 
-let currPlayer = 1; // active player: 1 or 2
+let currPlayer = 2; // active player: 1 or 2
 const board = []; // array of rows, each row is array of cells  (board[y][x])
 
 /** makeBoard: create in-JS board structure:
@@ -47,7 +47,7 @@ function makeHtmlBoard() {
     for (let x = 0; x < WIDTH; x++) {
       const cell = document.createElement('td');
       cell.setAttribute('id', `${y}-${x}`);
-      cell.setAttribute('class', 'square');
+      cell.classList.add('data-square');
       row.append(cell);
     }
     htmlBoard.append(row);
@@ -66,7 +66,10 @@ function findSpotForCol(x) {
 function placeInTable(y, x) {
   // TODO: make a div and insert into correct table cell
   const gamePiece = document.createElement('div');
-  gamePiece.setAttribute('class', 'piece');
+  gamePiece.classList.add('piece');
+  gamePiece.classList.add('taken');
+  if (currPlayer === 1) gamePiece.classList.add('player1');
+  if (currPlayer === 2) gamePiece.classList.add('player2');
 
   // Place gamePiece into correct column
   boardSpace = document.getElementById(`${y}-${x}`);
@@ -84,10 +87,10 @@ function endGame(msg) {
 
 function handleClick(evt) {
   // get x from ID of clicked cell
-  var x = +evt.target.id;
+  let x = +evt.target.id;
 
   // get next spot in column (if none, ignore click)
-  var y = findSpotForCol(x);
+  let y = findSpotForCol(x);
   if (y === null) {
     return;
   }
@@ -103,6 +106,8 @@ function handleClick(evt) {
 
   // check for tie
   // TODO: check if all cells in board are filled; if so call, call endGame
+  const htmlBoard = document.getElementById('board');
+  console.log(htmlBoard);
 
   // switch players
   // TODO: switch currPlayer 1 <-> 2
