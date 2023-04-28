@@ -1,16 +1,15 @@
 /* game board table */
 
-/* #board td {
+#board td {
   width: 50px;
   height: 50px;
   border: solid 1px #666;
-} */
+}
 
 /* pieces are div within game table cells: draw as colored circles */
 
 .piece {
   /* TODO: make into circles */
-  border-radius: 50%;
   margin: 5px;
   width: 80%;
   height: 80%;
