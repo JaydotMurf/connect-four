@@ -47,6 +47,7 @@ function makeHtmlBoard() {
     for (let x = 0; x < WIDTH; x++) {
       const cell = document.createElement('td');
       cell.setAttribute('id', `${y}-${x}`);
+      cell.setAttribute('class', 'square');
       row.append(cell);
     }
     htmlBoard.append(row);
@@ -57,13 +58,20 @@ function makeHtmlBoard() {
 
 function findSpotForCol(x) {
   // TODO: write the real version of this, rather than always returning 0
-  return 0;
+  return HEIGHT - 1;
 }
 
 /** placeInTable: update DOM to place piece into HTML table of board */
 
 function placeInTable(y, x) {
   // TODO: make a div and insert into correct table cell
+  const gamePiece = document.createElement('div');
+  gamePiece.setAttribute('class', 'piece');
+
+  // Place gamePiece into correct column
+  boardSpace = document.getElementById(`${y}-${x}`);
+  console.log(boardSpace);
+  boardSpace.append(gamePiece);
 }
 
 /** endGame: announce game end */
