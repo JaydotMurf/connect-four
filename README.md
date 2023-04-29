@@ -1,6 +1,6 @@
 # Connect Four
 
-Connect Four is a classic two-player game in which players take turns dropping colored discs into a vertical board. The first player to get four of their discs in a row (horizontally, vertically, or diagonally) wins the game. 
+Connect Four is a classic two-player game in which players take turns dropping colored discs into a vertical board. The first player to get four of their discs in a row (horizontally, vertically, or diagonally) wins the game.
 
 This implementation of Connect Four was created using HTML, CSS, and JavaScript.
 
@@ -29,12 +29,6 @@ This implementation of Connect Four was created using HTML, CSS, and JavaScript.
 - Implement a computer player for single-player mode.
 - Add sound effects to gameplay.
 - Improve the game's UI and overall design.
-
-## Credits
-
-- [FreeCodeCamp's YouTube Tutorial](https://www.youtube.com/watch?v=Connect4lubNnve4)
-- [The Odin Project](https://www.theodinproject.com/paths/full-stack-javascript/courses/javascript/lessons/connect-four)
-- [w3schools.com](https://www.w3schools.com/)
 
 ## License
 
