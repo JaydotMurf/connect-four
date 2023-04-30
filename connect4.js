@@ -15,6 +15,8 @@ document.addEventListener('DOMContentLoaded', function () {
   /** createBoard: create in-JS board structure:
    *    board = array of rows, each row is array of cells  (board[y][x])
    */
+
+  // * Test
   function createBoard() {
     for (let i = 0; i < HEIGHT; i++) {
       board.push(Array(WIDTH).fill(null));
@@ -41,6 +43,7 @@ document.addEventListener('DOMContentLoaded', function () {
     htmlBoard.append(topRow);
 
     // * create HTML table rows and cells for the game board
+    // TODO: Turn into it's own function
     for (let y = 0; y < HEIGHT; y++) {
       const row = document.createElement('tr');
       for (let x = 0; x < WIDTH; x++) {
@@ -60,10 +63,13 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // handle click on top row cell by triggering click on lowest empty cell in column
     let y = findSpotForCol(x);
-    if (y !== null) {
-      // place piece in board and add to HTML table
-      placeInTable(y, x);
+    // ? Should I either bother w/ the braces
+    if (y === null) {
+      return;
     }
+
+    // place piece in board and add to HTML table
+    placeInTable(y, x);
 
     // check for win
     if (checkForWin()) {
@@ -128,6 +134,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     // Iterate over all possible starting points for winning combinations
+    // TODO: Turn into it's own function
     for (let y = 0; y < HEIGHT; y++) {
       for (let x = 0; x < WIDTH; x++) {
         // Check all possible winning combinations starting from this point
