@@ -18,13 +18,13 @@ This implementation of Connect Four was created using HTML, CSS, and JavaScript.
 3. Start playing!
 
 ## Features
-
+****
 - Two-player gameplay.
 - Dynamic board size (7 columns by 6 rows).
 - Colorful game pieces.
 - Winning and tie alerts.
 
-## Future Improvements
+**## Future Improvements**
 
 - Implement a computer player for single-player mode.
 - Add sound effects to gameplay.
